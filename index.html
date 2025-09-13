@@ -88,5 +88,32 @@
             </li>
         </ul>
     </div>
+
+
+<!-- Firebase anstics  -->
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDvSWrbFjIO2Z2ArULNkNKxh2Ry-3LbdpQ",
+    authDomain: "sumit-practise.firebaseapp.com",
+    projectId: "sumit-practise",
+    storageBucket: "sumit-practise.firebasestorage.app",
+    messagingSenderId: "725257548567",
+    appId: "1:725257548567:web:e872c436e9149a3961fd52",
+    measurementId: "G-13JKDNC0W0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
