@@ -6,11 +6,77 @@
     <title>Day 6</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" />
     <link rel="stylesheet" href="../common.css">
+    <style>
+        #navigation ul{
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        #navigation ul li{
+            display: inline;
+            margin-right: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Back To Home Button -->
     <button class="back-btn"><a href="https://sumit-practise.web.app/">&#8592; Back to Home</a></button>
-    <h1>HTML5 Semantic Elements</h1>
+    <header>
+        <h1>Semantic Elements HTML</h1>
+    </header>
+    <nav id="navigation">
+        <ul>
+            <li>
+                <a href="#">Introduction</a>
+            </li>
+            <li>
+                <a href="#">Semantic Elements</a>
+            </li>
+            <li>
+                <a href="#">Benefits</a>
+            </li>
+            <li>
+                <a href="#">Examples</a>
+            </li>
+        </ul>
+    </nav>
 
+    <section style="max-width: 600px;">
+        <h3 >About Me</h3>
+        <article>
+            <p>My name is Sumit and I am a web developer. I have a passion for creating beautiful and functional websites that
+                provide an excellent user experience. I have experience with HTML, CSS, JavaScript, and various web development
+                frameworks. I am always eager to learn new technologies and improve my skills. Thank you for visiting my
+                portfolio!
+            </p>
+        </article>
+    </section>
+    <aside>
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+        </ul>
+    </aside>
+
+<section max-width="600px">
+    <h3>embed tag</h3>
+    <embed src="https://www.w3.org/TR/html52/semantics.html" width="100%" height="400px" type="text/html">
+</section>
+
+<section>
+    <h3>Right to left text</h3>
+    <p dir="rtl">This text is right to left</p>
+</section>
+
+<footer>
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:sumittechboy@yahoo.com"> Email</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/sumittechboy/">instagram.com/sumittechboy</a></p>
+    <p>&copy; 2024 Sumit Web Development. All rights reserved.</p>
+</footer>
 </body>
 </html>
