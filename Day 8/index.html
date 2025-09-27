@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 - Introduction to CSS</title>
+    <!-- external css -->
+    <link rel="stylesheet" href="CSSday8.css" id="extCssDay8">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" />
+    <link rel="stylesheet" href="../common.css">
+    <!-- Internal css -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+    
+        p {
+            line-height: 1.6;
+        }
+
+      
+        
+       
+    </style>
+</head>
+<body>
+
+    <!-- Stylish Toggle Switches for CSS -->
+    <div style="display:flex;align-items:center;gap:24px;margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+            <label style="font-size:1.1em;color:#333;font-weight:bold;">External CSS:</label>
+            <label class="switch">
+                <input type="checkbox" id="cssToggleExt" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <!-- <div style="display:flex;align-items:center;gap:12px;">
+            <label style="font-size:1.1em;color:#333;font-weight:bold;">Internal CSS:</label>
+            <label class="switch">
+                <input type="checkbox" id="cssToggleInt" checked>
+                <span class="slider"></span>
+            </label>
+        </div> -->
+    </div>
+
+      <!-- Back To Home Button -->
+    <button class="back-btn"><a href="https://sumit-practise.web.app/">&#8592; Back to Home</a></button>
+
+
+
+    <!-- inline css to make h1 red -->
+    <h1 style="color: Red;">Welcome To My Porfolio</h1>
+    <h2>About me</h2>
+    <p class="highlight">
+        Hi, I'm Sumit, a passionate web developer dedicated to building modern, responsive, and user-friendly websites.
+        With a strong foundation in HTML, CSS, and JavaScript, I love turning creative ideas into interactive digital
+        experiences. Let's connect and create something amazing together!
+    </p>
+    <h2> Education</h2>
+    <p>Intellipaat Certified web Developer</p>
+    <h2>Skills</h2>
+    <ul id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+    </ul>
+    <h2>Contact Me</h2>
+    <button id="bt"><a href="mailto:sumittechboy@yahoo.com">Contact Me</a></button>
+
+
+    <script src="../script.js"></script>
+    <!-- JS moved to script.js -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* global selectors */
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* element selectors */
+
+h2 {
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* class selectors */
+.highlight {
+    background-color: rgb(143, 224, 163);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* id selectors */
+#list {
+    list-style-type: square;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+#bt {
+
+    background-color: #333;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #555;
+
+
+}
+
+#bt a {
+    text-decoration: none;
+    color: white;
+}
