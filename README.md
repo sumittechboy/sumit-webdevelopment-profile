@@ -15,7 +15,7 @@ Hi, I'm **Sumit** — a passionate web developer dedicated to turning ideas into
 
 ---
 
-## 📚 Days of Practice
+## 📚 Days of Practice & Projects
 
 Each folder represents a day of hands-on learning and building. Explore my daily progress, code samples, and mini-projects:
 
@@ -23,10 +23,24 @@ Each folder represents a day of hands-on learning and building. Explore my daily
 |-----|---------------------|
 | 1   | Portfolio intro, About Me, Education, Skills, Contact, HTML/CSS/JS basics |
 | 2   | Headings, text formatting, blockquotes, lists, organizing info |
-| 3   | Images, alt attributes, project showcase, anchor links |
-| 4   | Tables, lists, tel/email links |
-| 5   | Iframes, multimedia, forms, canvas, emojis |
-| 6   | HTML5 semantic elements, accessibility, SEO |
+| 3   | Images, alt attributes, project showcase, anchor links, sample projects |
+| 4   | Tables, lists, tel/email links, restaurant menu project |
+| 5   | Iframes, multimedia, forms, canvas, emojis, feedback form, map, audio/video demo |
+| 6   | HTML5 semantic elements, accessibility, SEO, navigation bar |
+| 7   | Personal blog, journey, first project, navigation, articles |
+| 8   | Advanced CSS: external/internal CSS, stylish toggle switches for CSS, improved UI, highlight effects |
+
+---
+
+## 🛠️ Recent Updates
+
+- Added stylish toggle switches to enable/disable external and internal CSS on Day 8
+- Improved project navigation and sidebar
+- Enhanced error pages and README visuals
+- Refined UI with gradients, neon effects, and modern buttons
+- Cleaned up JavaScript and HTML for better maintainability
+
+---
 
 ---
 
