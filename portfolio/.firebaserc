@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "sumit-practise"
+  },
+  "targets": {
+    "sumit-practise": {
+      "hosting": {
+        "sumitfrontend": [
+          "sumitfrontend"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

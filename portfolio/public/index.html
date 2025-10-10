@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 days Practice Days Overview</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #181A20;
+            color: #E3E6ED;
+            font-family: 'Fira Mono', 'Consolas', 'Monaco', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .day-li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 28px 0;
+            background: #181A20;
+            border-left: 6px solid #7FDBCA;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+            transition: background 0.2s;
+            padding: 0;
+        }
+
+        .day-li:hover {
+            background: #23272F;
+        }
+
+        .day-content {
+            flex: 1;
+            padding: 18px 0;
+            padding-left: 10px;
+        }
+
+        .day-iframe {
+
+            width: 280px;
+            height: 220px;
+            background-color: whitesmoke;
+            border: 2px solid #FFD86B;
+            border-radius: 8px;
+            /* box-shadow: 0 0 16px 2px ; */
+            margin-left: 18px;
+            background: #23272F;
+
+            /* Apply scaling */
+            -ms-zoom: 0.75;
+            /* For older IE versions
+            -moz-transform: scale(0.75);
+            /* For Firefox */
+            /* -moz-transform-origin: 0 0; */
+            /* -o-transform: scale(0.75); */
+            /* For Opera */
+            /* -o-transform-origin: 0 0; */
+            /* -webkit-transform: scale(0.75); */
+            /* For Chrome, Safari */
+            /* -webkit-transform-origin: 0 0; */
+            /* transform: scale(0.75); */
+            /* Standard property */
+            /* transform-origin: 0 0; */
+        }
+
+        .day-iframe:hover {
+            box-shadow: 0 0 24px 4px #FFD86B;
+            transform: scale(1.05);
+
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 48px auto;
+            background: #23272F;
+            padding: 40px 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        h1 {
+            text-align: center;
+            color: #7FDBCA;
+            font-size: 2.5em;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+
+        /* Button that links to new.html */
+        .open-new-wrap { text-align: center; margin: 18px 0 28px 0; }
+        .open-new-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD86B 0%, #7FDBCA 100%);
+            color: #0b1220;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .open-new-btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+        .open-new-btn:active{ transform: translateY(-1px); }
+
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 28px 0;
+            background: #181A20;
+            border-left: 6px solid #7FDBCA;
+            border-radius: 8px;
+            padding: 22px 28px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+            transition: background 0.2s;
+        }
+
+        li:hover {
+            background: #23272F;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFD86B;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0f75eb;
+        }
+
+        .topics {
+            margin-top: 10px;
+            color: #B2B8C6;
+            font-size: 1.05em;
+            font-family: inherit;
+        }
+
+        .code-icon {
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-right: 10px;
+            color: #FFD86B;
+        }
+
+        @media screen and (max-width: 900px) {
+
+
+            .day-li {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .day-iframe {
+                width: 95%;
+                height: 200px;
+                margin: 12px 0 0 0;
+            }
+
+            h1 {
+
+                font-size: 1.5rem;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="projects">
+
+    </div>
+
+    <div class="open-new-wrap">
+        <a class="open-new-btn" href="new.html" aria-label="Open new page">Visit my ongoing project</a>
+    </div>
+
+    <div class="container">
+        <h1><span class="code-icon">&#60;&#47;&#62;</span> Coding Practice</h1>
+        <ul>
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 1/index.html">Day 1 of Practice</a>
+                    <div class="topics">
+                        Topics covered: Portfolio introduction, About Me, Education, Skills list, Contact button, HTML
+                        structure, CSS/JS basics.
+                    </div>
+
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 1/index.html"
+                    sandbox="allow-scripts allow-same-origin"></iframe>
+
+            </li>
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 2/index.html">Day 2 of Practice</a>
+                    <div class="topics">
+                        Topics covered: Headings, strong/em/u/sup/sub tags, blockquote, bullet lists, organizing
+                        information, enhancing content with media.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 2/index.html"></iframe>
+            </li>
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 3/index.html">Day 3 of Practice</a>
+                    <div class="topics">
+                        Topics covered: Img tags, alt attributes, image sizing, project showcase, anchor links, email.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 3/index.html"></iframe>
+            </li>
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 4/index.html">Day 4 of Practice</a>
+                    <div class="topics">
+                        Topics covered: HTML tables, UL, A:tel.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 4/index.html"></iframe>
+            </li>
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 5/index.html">Day 5 of Practice</a>
+                    <div class="topics">
+                        Topics Covered: HTML Iframe, Multimedia (Audio and Video Tag), Html Forms, Canvas, Emojis.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 5/index.html"></iframe>
+            </li>
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 6/index.html">Day 6 of Practice</a>
+                    <div class="topics">
+                        Syntax and usage of HTML5 semantic elements like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;,
+                        &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and &lt;footer&gt;. How these elements improve
+                        accessibility and SEO.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 6/index.html"></iframe>
+            </li>
+
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 7/index.html">Day 7 of Practice</a>
+                    <div class="topics">
+                        Personal blog structure using HTML5 semantic elements, organizing content with sections and
+                        articles,
+                        enhancing navigation with a nav bar, and improving user experience with asides for additional
+                        info.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 7/index.html"></iframe>
+            </li>
+
+            <li class="day-li">
+
+                <div class="day-content">
+                    <a href="./sumit-webdevelopment-profile/Day 8/index.html">Day 8 of Practice</a>
+                    <div class="topics">
+                        Introduction to CSS, External vs Internal CSS, linking CSS files, CSS selectors, properties, and
+                        basic styling techniques. Explored the structure and content of the Day 8 folder's CSS file,
+                        including comments, color schemes, and layout rules.
+                    </div>
+                </div>
+                <iframe class="day-iframe" src="./sumit-webdevelopment-profile/Day 8/index.html"></iframe>
+            </li>
+        </ul>
+    </div>
+
+    <div style="text-align:center; margin-top:40px; font-family:sans-serif; color:#333;">
+        <h2>Secret Book Access</h2>
+        <input type="text" id="secretInput" placeholder="Enter secret word"
+            style="padding:8px; font-size:1em; border-radius:6px; border:1px solid #ccc;">
+        <button id="openBookBtn"
+            style="display:none; margin-left:10px; padding:8px 18px; font-size:1em; border-radius:6px; background:#23272F; color:#FFD86B; border:none; cursor:pointer;">Open
+            the Book</button>
+    </div>
+    <script>
+        const secretInput = document.getElementById('secretInput');
+        const openBookBtn = document.getElementById('openBookBtn');
+        // Listen for input and show button if keyword matches (case-insensitive)
+        secretInput.addEventListener('input', function () {
+            const value = secretInput.value.trim().toLowerCase();
+            if (value === 'book' || value === 'sonali') {
+                openBookBtn.style.display = 'inline-block';
+            } else {
+                openBookBtn.style.display = 'none';
+            }
+        });
+        // On button click, open Notion page in new tab
+        openBookBtn.addEventListener('click', function () {
+            window.open('https://cumbersome-dodo-4d2.notion.site/Master-Frontend-in-100-Days-87a27932b3ba43eaad52c394b8664a10?pvs=149', '_blank');
+        });
+    </script>
+
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+
+
+
+    <!-- Firebase anstics  -->
+
+    <script type="module">
+
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDvSWrbFjIO2Z2ArULNkNKxh2Ry-3LbdpQ",
+            authDomain: "sumit-practise.firebaseapp.com",
+            projectId: "sumit-practise",
+            storageBucket: "sumit-practise.firebasestorage.app",
+            messagingSenderId: "725257548567",
+            appId: "1:725257548567:web:e872c436e9149a3961fd52",
+            measurementId: "G-13JKDNC0W0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'logo';
+    src: url(./assets/fonts/Lobster/Lobster-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(245, 245, 220);
+}
+
+.top {
+    margin: 0;
+    position: fixed;
+
+}
+
+.header {
+    display: flex;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: start;
+    /* border: 1px solid black; */
+    /*temperory border*/
+}
+
+
+.logo {
+    margin: 0.1em 0.5em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: start;
+}
+
+.logo img {
+    margin: 0.4em;
+    padding: 0;
+    border-radius: 50%;
+    max-width: 3em;
+    max-width: 3em;
+    border: 0.1em solid rgb(93, 192, 119);
+}
+
+.logo h1 {
+    font-family: 'logo';
+    font-size: 1.5em;
+    margin: auto;
+    color: rgb(11, 102, 35);
+}
+
+.logo h1 span {
+    color: rgb(54, 69, 79);
+}
+
+.navigation {
+    margin: 0.1em 0.5em;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    margin: 0 0em 0 3em;
+}
+
+.navigation a {
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+    padding: 0 1em;
+}
+
+.contact {
+    background-color: rgb(11, 102, 35);
+    box-shadow: none;
+    border: 2px solid rgb(54, 69, 79);
+    border-radius: 10px;
+    color: antiquewhite;
+}
+
+.menuRes {
+    display: flex;
+    width: 65%;
+    justify-content: flex-start;
+    justify-items: center;
+}
+
+
+
+
+#nav-icon2 {
+    display: none;
+    background-color: transparent;
+    border: none;
+    width: 5em;
+    height: 2.5em;
+    position: relative;
+    margin: 0.2em 0.2em;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon2 span {
+    display: block;
+    position: absolute;
+    height: 0.3em;
+    width: 1em;
+    background: rgb(11, 102, 35);
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#nav-icon2 span:nth-child(even) {
+    left: 20%;
+    border-radius: 0 9px 9px 0;
+}
+
+#nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+#nav-icon2 span:nth-child(1),
+#nav-icon2 span:nth-child(2) {
+    top: 5px;
+}
+
+#nav-icon2 span:nth-child(3) {
+    top: 12px;
+}
+
+#nav-icon2 span:nth-child(4) {
+    top: 12px;
+}
+
+#nav-icon2 span:nth-child(5),
+#nav-icon2 span:nth-child(6) {
+    top: 19px;
+}
+
+#nav-icon2.open span:nth-child(1),
+#nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-icon2.open span:nth-child(2),
+#nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#nav-icon2.open span:nth-child(1) {
+    left: 0.8em;
+    top: 0.7em;
+}
+
+#nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 1em);
+    top: 0.7em;
+}
+
+#nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(5) {
+    left: 0.8em;
+    top: 1.4em;
+}
+
+#nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 1em);
+    top: 1.4em;
+}
+
+
+@media (max-width: 600px) {
+    .navigation {
+        display: none;
+        
+    }
+
+    #nav-icon2{
+        display: flex;
+    }
+
+    .open{
+        margin: 0;
+    }
+
+    .contact{
+        display: none;
+    }
+
+    .navBar{
+        margin: 1em;
+    }
+    /* Slide transition: keep the navigation in the flow but collapsed by default */
+    .navBar .navigation {
+        /* display: block; allow sizing */
+        min-height: 2em;
+        max-height: 1.5em;
+        overflow: hidden;
+        opacity: 0; */
+        transition: max-height 300ms ease, opacity 300ms ease, transform 300ms ease;
+        transform-origin: top;
+        transform: translateY(-8px);
+    }
+
+    /* When navBar has .open, reveal the navigation with a slide/fade */
+    .navBar.open .navigation {
+        max-height: 60%; /* large enough to show all items; adjust if needed */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Make nav links vertical on mobile when open */
+    .navBar .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: flex-end;
+        padding: 0.5em 0.5em;
+        background: rgba(255,255,255,0.98);
+        border-radius: 6px;
+    }
+
+    /* New menuPanel: will expand horizontally from the button into a rounded pill */
+    .menuPanel {
+        display: inline-flex;
+        align-items: center;
+        overflow: visible;
+        margin-left: 0.5em;
+        transition: width 300ms ease, background-color 300ms ease, border-radius 300ms ease;
+        width: 3.2em; /* initial matches nav-icon2 button width roughly */
+        height: 2.4em;
+        background: transparent;
+        border-radius: 999px;
+    }
+
+    /* Place navigation horizontally inside the panel but hidden by clipping */
+    .menuPanel .navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+        align-items: center;
+        padding: 0 0.6em;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateX(-8px);
+        transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    /* When navBar is open, expand the panel into a pill and reveal links horizontally */
+    .navBar.open .menuPanel {
+        width: min(90vw, 420px);
+        background: rgba(255,255,255,0.98);
+        border-radius: 25px;
+    }
+
+    .navBar.open .menuPanel .navigation {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Adjust nav-icon position so it sits flush at the left of the pill */
+    #nav-icon2 {
+        margin-right: 0.4em;
+        z-index: 2;
+    }
+
+    /* Make links visually lighter for the pill UI */
+    .menuPanel .navigation .navLink {
+        padding: 0.4em 0.6em;
+        color: rgb(11,102,35);
+    }
+
+}
