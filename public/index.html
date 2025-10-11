@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,33 +16,34 @@
             padding: 0;
         }
 
-            /* Digital Clock Styles */
+        /* Digital Clock Styles */
+        .digital-clock {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            z-index: 1000;
+            background: rgba(32, 36, 44, 0.95);
+            color: #FFD86B;
+            font-family: 'Fira Mono', monospace;
+            font-size: 1.35em;
+            padding: 12px 28px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+            border: 2px solid #7FDBCA;
+            letter-spacing: 2px;
+            transition: left 0.3s, top 0.3s;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 600px) {
             .digital-clock {
-                position: fixed;
-                top: 18px;
-                left: 18px;
-                z-index: 1000;
-                background: rgba(32, 36, 44, 0.95);
-                color: #FFD86B;
-                font-family: 'Fira Mono', monospace;
-                font-size: 1.35em;
-                padding: 12px 28px;
-                border-radius: 16px;
-                box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-                border: 2px solid #7FDBCA;
-                letter-spacing: 2px;
-                transition: left 0.3s, top 0.3s;
-                user-select: none;
+                left: 50%;
+                top: 12px;
+                transform: translateX(-50%);
+                font-size: 1.1em;
+                padding: 10px 18px;
             }
-            @media screen and (max-width: 600px) {
-                .digital-clock {
-                    left: 50%;
-                    top: 12px;
-                    transform: translateX(-50%);
-                    font-size: 1.1em;
-                    padding: 10px 18px;
-                }
-            }
+        }
 
         .day-li {
             position: relative;
@@ -120,7 +120,11 @@
         }
 
         /* Button that links to new.html */
-        .open-new-wrap { text-align: center; margin: 18px 0 28px 0; }
+        .open-new-wrap {
+            text-align: center;
+            margin: 18px 0 28px 0;
+        }
+
         .open-new-btn {
             display: inline-block;
             background: linear-gradient(90deg, #FFD86B 0%, #7FDBCA 100%);
@@ -130,13 +134,20 @@
             font-weight: 700;
             font-size: 1rem;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
             transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
             border: none;
             cursor: pointer;
         }
-        .open-new-btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
-        .open-new-btn:active{ transform: translateY(-1px); }
+
+        .open-new-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .open-new-btn:active {
+            transform: translateY(-1px);
+        }
 
 
         ul {
@@ -185,6 +196,75 @@
             color: #FFD86B;
         }
 
+        /* Analog Clock Styles */
+        .analog-clock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .clock-face {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            background: #23272F;
+            border: 3px solid #FFD86B;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+            margin-bottom: 8px;
+        }
+
+        .hand {
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            background: #FFD86B;
+            transform-origin: bottom center;
+            border-radius: 2px;
+        }
+
+        .hand.hour {
+            width: 6px;
+            height: 28px;
+            background: #7FDBCA;
+            z-index: 3;
+        }
+
+        .hand.minute {
+            width: 4px;
+            height: 38px;
+            background: #FFD86B;
+            z-index: 2;
+        }
+
+        .hand.second {
+            width: 2px;
+            height: 44px;
+            background: #FF6B6B;
+            z-index: 1;
+        }
+
+        .center-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            background: #FFD86B;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 0 4px #FFD86B;
+        }
+
+        .digital-time {
+            font-size: 1.1em;
+            color: #FFD86B;
+            background: none;
+            margin-top: 2px;
+            letter-spacing: 2px;
+        }
+
         @media screen and (max-width: 900px) {
 
 
@@ -211,7 +291,15 @@
 
 <body>
     <div class="digital-clock">
-        <span id="Time"></span>
+        <div class="analog-clock">
+            <div class="clock-face">
+                <div class="hand hour" id="hourHand"></div>
+                <div class="hand minute" id="minuteHand"></div>
+                <div class="hand second" id="secondHand"></div>
+                <div class="center-dot"></div>
+            </div>
+            <div class="digital-time" id="Time"></div>
+        </div>
     </div>
     <div class="projects">
     </div>
@@ -348,23 +436,33 @@
 
 
         function time() {
-            
             let dis = document.getElementById('Time');
-            function pad(n) { return n < 10 ? '0' + n : n; }
-            setInterval(() => {
+            let hourHand = document.getElementById('hourHand');
+            let minuteHand = document.getElementById('minuteHand');
+            let secondHand = document.getElementById('secondHand');
+            function pad(n) {
+                return n < 10 ? '0' + n : n;
+            }
+            function updateClock() {
                 let dateTime = new Date();
                 let hour = dateTime.getHours();
-                let AmPm = 'am';
-                if (hour > 12) {
-                    hour = hour - 12;
-                    AmPm = 'pm';
-                } else if (hour === 12) {
-                    AmPm = 'pm';
-                } else if (hour === 0) {
-                    hour = 12;
-                }
-                dis.innerText = `${pad(hour)}:${pad(dateTime.getMinutes())}:${pad(dateTime.getSeconds())} ${AmPm}`;
-            }, 1000);
+                let minute = dateTime.getMinutes();
+                let second = dateTime.getSeconds();
+                let AmPm = hour >= 12 ? 'pm' : 'am';
+                let hour12 = hour % 12;
+                hour12 = hour12 ? hour12 : 12;
+                // Digital time
+                dis.innerText = `${pad(hour12)}:${pad(minute)}:${pad(second)} ${AmPm}`;
+                // Analog hands
+                let hourDeg = (hour12 * 30) + (minute * 0.5); // 360/12=30deg per hour, 0.5deg per min
+                let minuteDeg = (minute * 6) + (second * 0.1); // 360/60=6deg per min, 0.1deg per sec
+                let secondDeg = second * 6; // 360/60=6deg per sec
+                hourHand.style.transform = `translate(-50%, 0) rotate(${hourDeg}deg)`;
+                minuteHand.style.transform = `translate(-50%, 0) rotate(${minuteDeg}deg)`;
+                secondHand.style.transform = `translate(-50%, 0) rotate(${secondDeg}deg)`;
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
         }
         time();
     </script>
