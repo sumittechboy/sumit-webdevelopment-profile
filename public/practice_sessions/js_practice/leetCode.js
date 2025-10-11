@@ -17,4 +17,8 @@
 var nums = [2,7,11,15];
 var target = 9;
 
-for(i = 0; i<nums.length; i++)
+var store = [];
+for(i = 0; i<nums.length; i++){
+    for(j)
+
+}
