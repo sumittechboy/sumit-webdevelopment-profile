@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+</head>
+
+<body>
+    <h1 id="Time">
+
+    </h1>
+
+
+    <script>
+        
+
+        function time() {
+            
+            let dis = document.getElementById('Time')
+            setInterval(() => {
+                let dateTime = new Date();
+                let hour;
+                let AmPm;
+                if(dateTime.getHours()>12){
+                    AmPm = 'pm'
+                    hour = dateTime.getHours()-12
+
+                }else if (dateTime.getHours()>=12) {
+                    AmPm = 'pm'
+                } else {
+                    AmPm = 'am'
+                }
+                
+                dis.innerText = `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()} ${AmPm}`
+            },1000);
+            
+        }
+
+        time()
+    </script>
+</body>
+
+</html>
