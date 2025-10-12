@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="./assets/media/fav.png">
+    <link rel="stylesheet" href="main.css">
+    <title>Sumit's Portfolio</title>
+</head>
+
+<body>
+    <header class="containor">
+        <div class="nav-box" id="logo-head">
+            <div class="logo">
+                <img id="head-img" src="./assets/media/code.gif" alt="coding" srcset="">
+                <h1 id="head">Hire<span>Sumit</span></h1>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="nav-box" id="res-menu">
+            <button type="button" class="menu-hidden">Menu </button>
+        </div>
+
+        <div class="nav-box" id="navbar">
+
+            <nav class="navigation " id="nav-bar">
+                <a href="#" class="links">Home</a>
+                <a href="./index.html" class="links">Practices</a>
+                <a href="#" class="links">Projects</a>
+                <button class="links" id="back-btn">X</button>
+                <button id="contact-nav">Let's Have a Talk</button>
+            </nav>
+
+
+
+        </div>
+
+
+
+
+    </header>
+
+
+
+
+    <script>
+
+        const menu = document.getElementsByClassName('menu-hidden');
+        const menu_elm = document.getElementById("res-menu")
+        const navbar = document.getElementById("navbar")
+        const title = document.getElementById("logo-head")
+        const cont = document.querySelector('.containor')
+        const bkBtn = document.querySelector('#back-btn')
+
+        if (menu.length > 0) {
+            menu[0].addEventListener("click", menubar);
+        }
+
+        function menubar() {
+            navbar.style.display = "flex";
+            title.setAttribute("style", "display:none;");
+            menu_elm.style.display = "none"
+            cont.style.borderRadius = '25px' 
+            cont.style.margin = '1em'
+            cont.style.minWidth= '90vw'; 
+        }
+
+       if (bkBtn) {
+            bkBtn.addEventListener("click", back); 
+       }
+
+        function back() {
+
+            // alert("back button")
+            navbar.style.display = "none";
+            title.setAttribute("style", "display:flex;");
+            menu_elm.style.display = "flex"
+            cont.style.borderRadius = '0px' 
+            cont.style.margin = '0em' 
+            cont.style.minWidth= '100vw'; 
+        }
+
+
+        
+        // consgetElementsByClassNameescontainor
+
+        // function handleResize() {
+        //     const currentWidth = window.innerWidth; // Get the current viewport width
+        //     scrWidth = currentWidth
+        //     console.log("Window width changed to:", currentWidth + "px");
+
+        // }
+
+        // if (scrWidth < 768) {
+        //     alert("small screen")
+        // }
+        
+        // const btn = document.querySelector('.menu-hidden');
+        // const nav = document.getElementById('nav-bar') || document.querySelector('nav.navigation');
+        // const title = document.getElementById('logo-head');
+        
+        // if (btn) {
+            //     btn.addEventListener('click', () => {
+        //         nav && nav.classList.add('navbar-res');    // show nav via class
+        //         title && title.classList.add('hidden');    // hide title via class
+        //         btn.classList.add('hidden');               // hide the button itself
+        //     });
+        // }
+
+
+    </script>
+</body>
+
+</html>
