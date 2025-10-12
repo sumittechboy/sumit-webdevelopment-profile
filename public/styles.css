@@ -339,14 +339,18 @@ a:hover {
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 
 .menu-button {
-    background: linear-gradient(90deg, #FFD86B 0%, #7FDBCA 100%);
-    color: #07121a;
-    border: none;
+    background: linear-gradient(90deg, #3cecc9 0%, #7FDBCA 100%);
+    color: #222222;
+    border: #ffd86b;
     padding: 8px 12px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
     box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+}
+
+.menu-button:hover {
+   background: linear-gradient(90deg, #d4dcda 0%, #dce0e0 100%);
 }
 
 .projects-menu {
