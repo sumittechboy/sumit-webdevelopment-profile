@@ -1,0 +1,278 @@
+@font-face {
+    font-family: lexend;
+    src: url(./Lexend_Deca/LexendDeca-VariableFont_wght.ttf);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'lexend', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #080618;
+    color: white;
+}
+
+
+/* headder navbar  */
+
+.nav{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #080618;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
+
+.logo h1{
+    margin: 0 3em;
+}
+
+.logo span{
+    color: #F0A93E;
+}
+
+.navBar{
+    margin-left: auto;
+    padding: 5px 10%;
+}
+.navBar ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.navBar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+.navBar ul li a:hover{
+    color: #F0A93E;
+    transition: 0.3s;
+}
+
+
+/* Introduction section */
+
+.intro{
+    display: flex;
+    margin: 70px 0 0 0;
+    padding: 2em 9em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+    min-height: 40vh;
+    gap: 0.2em;
+    background-color: #120827;
+}
+
+.intro #hello{
+    font-size: 18px;
+    font-weight: 400;
+    color: #F0A93E;
+    margin: 0;
+}
+
+.intro #name{
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.intro .aboutPar{
+    max-width: 500px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    text-align: justify;
+}
+
+.intro #button{
+    margin-top: 1em;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #FACC15;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.intro #button a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.intro #button:hover{
+    background-color: #EAB308;
+    transition: 0.3s;
+     transform: skewX(10deg);
+}
+
+/* About me section */
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em 9em;
+    gap: 1em;
+    min-height: 70vh;
+}
+
+#border img{
+    width: 20rem;
+    height: 20rem;
+    border: 10px solid #F0A93E;
+    border-radius: 25px;
+    margin-bottom: 1em;
+}
+
+.about h1{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.about span{
+    color: #F0A93E;
+    font-weight: 500;
+}
+
+#contentAbout{
+    margin: 0 6em 0 4em;
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1em;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+#contentAbout button{
+    margin-top: 1em;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #FACC15;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#contentAbout button a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+#contentAbout button:hover{
+    background-color: #EAB308;
+     transition: transform 1s ease;
+    transform: scale(1.1);
+}
+
+/* services section */
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em 9em;
+    gap: 1em;
+    min-height: 80vh;
+    background-color: #111827;
+}
+
+.services h1{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.services span{
+    color: #F0A93E;
+    font-weight: 500;
+}
+.services p{
+    max-width: 600px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    text-align: justify;
+}
+
+.services .serviceBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2em;
+    flex-wrap: wrap;
+}
+.box{
+    background-color: #020617;
+    padding: 0.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.box:hover{
+    transition: transform 1s ease;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.box img{
+    width: 50px;
+    height: 50px;
+}
+
+.box h3{
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 8em;
+    margin: 0;
+}
+
+.box p{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    text-align: center;
+    max-width: 90%;
+}
+
