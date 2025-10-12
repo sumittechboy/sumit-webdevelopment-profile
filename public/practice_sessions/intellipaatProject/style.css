@@ -135,7 +135,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2em 9em;
+    padding: 2em 9em 2em 70px;
     gap: 1em;
     min-height: 70vh;
 }
