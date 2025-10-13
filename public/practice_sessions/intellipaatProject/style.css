@@ -201,8 +201,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: right;
+    text-align: left;
     padding: 2em 9em;
     gap: 1em;
     min-height: 80vh;
@@ -220,7 +220,7 @@ body {
     font-weight: 500;
 }
 .services p{
-    max-width: 600px;
+    max-width: 500px;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5em;
@@ -241,8 +241,8 @@ body {
     padding: 0.5em;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 290px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,6 +265,7 @@ body {
     font-weight: 600;
     max-width: 8em;
     margin: 0;
+    text-align: center;
 }
 
 .box p{
@@ -275,4 +276,92 @@ body {
     text-align: center;
     max-width: 90%;
 }
+
+/* Portfolio section */
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    text-align: left;
+    padding: 2em 9em;
+    gap: 1em;
+    min-height: 80vh;
+}
+
+.portfolio h1{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+.portfolio span{
+    color: #F0A93E;
+    font-weight: 500;
+}
+.portfolio p{
+    max-width: 500px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    text-align: left;
+}
+
+.pBox{
+    display: grid;
+    grid-template-columns: repeat(2fr, 1fr, 1fr);
+    /* grid-template-rows: repeat(1fr, 1fr); */
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+
+/* .parent div {
+    background-color: #020617;
+    border: 2px solid #F0A93E;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    height: 100px;
+} */
+
+/* .parent .div2 img,div3 img,div4 img,div5 img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #F0A93E;
+    object-fit: cover;
+} */
+
+
+    
+.div1 {
+    grid-row: span 2 / span 2;
+    
+}
+
+
+
+.div4 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.div5 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+
 
