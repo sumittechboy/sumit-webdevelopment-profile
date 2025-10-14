@@ -132,10 +132,10 @@ body {
 /* About me section */
 .about{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     text-align: center;
-    padding: 2em 9em 2em 70px;
+    padding: 2em 9em 2em 8em;
     gap: 1em;
     min-height: 70vh;
 }
@@ -175,7 +175,7 @@ body {
 
 #contentAbout button{
     margin-top: 1em;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 20px;
     font-size: 16px;
     font-weight: 500;
     color: white;
