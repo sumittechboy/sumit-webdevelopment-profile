@@ -344,6 +344,14 @@ body {
         "box-1 box-2 box-3"
         "box-1 box-4 box-5";
 
+.parent .div2,div3,div4,div5 {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    /* border: 2px solid #F0A93E; */
+    background-size: cover;
+}
+
 }
 
 .parent img{
@@ -352,6 +360,7 @@ body {
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+
 
 }
 
