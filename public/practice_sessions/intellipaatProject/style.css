@@ -427,7 +427,7 @@ body {
 }
 
 
-.card h2{
+.card h2 {
     font-size: 20px;
     font-weight: 600;
     max-width: 8em;
@@ -436,21 +436,128 @@ body {
     color: #F0A93E;
 }
 
-.card p{
+.card p {
     text-align: center;
 }
 
+/* contact area  */
 
-.contact{
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    border: 1px solid #333;
+
 }
 
-.address{
+.contactTop{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 9em;
+    text-align: center;
+    /* background-color: #120827; */
+    width: 100%;
+}
+
+.contact h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.contact h1 span {
+    color: #F0A93E;
+    font-weight: 500;
+}
+
+.contactTop p {
+    max-width: 40em;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.address {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2em;
+    margin: 2em 0;
+    min-width: 80vw;
+}
+
+.boxAdd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    /* gap: 1em; */
+    max-width: 40em;
+}
+
+.boxAdd p {
+    color: #F0A93E;
+}
+
+.boxAdd p a, .boxAdd p span {
+    text-decoration: none;
+    color: #fff;
     
+}
+
+.boxForm  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1em;
+    /* max-width: 100em; */
+}
+
+.boxForm form input, .boxForm form textarea {
+    width: 20em;
+    padding: 10px;
+    border: none;   
+    /* border-radius: 5px; */
+    font-size: 14px;
+    background-color: #1F2937;
+}
+
+.boxForm form button{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2937 ;
+    background-color: #FACC15;
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+}
+
+
+/* footer part  */
+
+.footer {
+    background-color: #120827;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 14px;
+    color: white;
+}
+
+.links li{
+    display: inline;
+    margin: 0 10px;
+
+}
+
+.links li:hover{
+    text-decoration: none;
+    transform: scale(0.3);
 }
