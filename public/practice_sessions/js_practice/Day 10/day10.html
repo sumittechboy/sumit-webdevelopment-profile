@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator App</title>
-</head>
-<body>
+    <link rel="stylesheet" href="./calc.css" />
+  </head>
+  <body>
+    <div class="calc">
+      <input type="text" id="display" placeholder="0" />
 
-    <h3>
-        input operation and press enter to get answer
-    </h3>
-    <input type="text" id="display" placeholder="type your calculation">
-
+      <div class="keys">
+        <button class="btn" id="7">7</button>
+        <button class="btn" id="8">8</button>
+        <button class="btn" id="9">9</button>
+        <button class="btn" id="mul">X</button>
+        <button class="btn" id="4">4</button>
+        <button class="btn" id="5">5</button>
+        <button class="btn" id="6">6</button>
+        <button class="btn" id="min">-</button>
+        <button class="btn" id="1">1</button>
+        <button class="btn" id="2">2</button>
+        <button class="btn" id="3">3</button>
+        <button class="btn" id="add">+</button>
+        <button class="btn" id="ce">CE</button>
+        <button class="btn" id="0">0</button>
+        <button class="btn" id="eq">=</button>
+        <button class="btn" id="div">&divide;</button>
+      </div>
+    </div>
 
     <script src="day10.js"></script>
-</body>
+  </body>
 </html>
