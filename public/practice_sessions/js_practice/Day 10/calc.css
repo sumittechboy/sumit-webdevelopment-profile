@@ -26,6 +26,12 @@ body {
   /* box-shadow: ; */
 }
 
+
+.calc input [type=text] {
+  /* Scroll to the end */
+  justify-content: flex-end;
+  display: inline-flex;
+}
 .calc input {
   margin: 2em 2em 0 0.5em;
   padding: 0 0.3em 0 0;
@@ -36,12 +42,14 @@ body {
   font-weight: 600;
   background-color: transparent;
   border: none;
+  border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
     0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04),
     0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26),
     0px 8px 17px rgba(0, 0, 0, 0.29);
   color: #adacac;
   font-family: geo;
+  /* overflow-wrap: ; */
 }
 
 .keys {
@@ -88,8 +96,10 @@ body {
 
 #ce {
   color: #975dfa;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 #eq {
