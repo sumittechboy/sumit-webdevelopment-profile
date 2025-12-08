@@ -123,3 +123,90 @@
     updateClock();
     setInterval(updateClock, 1000);
 })();
+
+// Day-specific download functionality
+(function () {
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function () {
+        const downloadButtons = document.querySelectorAll('.day-download-btn');
+        
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', async function () {
+                const dayFolder = this.getAttribute('data-day');
+                const buttonText = this.innerHTML;
+                
+                // Disable button and show loading state
+                this.disabled = true;
+                this.innerHTML = '⏳ Preparing...';
+                
+                try {
+                    await downloadDayFolder(dayFolder);
+                    this.innerHTML = '✅ Downloaded!';
+                    setTimeout(() => {
+                        this.innerHTML = buttonText;
+                        this.disabled = false;
+                    }, 2000);
+                } catch (error) {
+                    console.error('Download failed:', error);
+                    this.innerHTML = '❌ Failed';
+                    setTimeout(() => {
+                        this.innerHTML = buttonText;
+                        this.disabled = false;
+                    }, 2000);
+                }
+            });
+        });
+    });
+
+    async function downloadDayFolder(dayFolder) {
+        const zip = new JSZip();
+        const basePath = `./practice_sessions/${dayFolder}`;
+        
+        // Define file extensions to include
+        const fileExtensions = ['.html', '.css', '.js', '.json', '.txt', '.md', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.ico'];
+        
+        // Try to fetch common files that might exist
+        const commonFiles = [
+            'index.html',
+            'style.css',
+            'styles.css',
+            'main.css',
+            'script.js',
+            'app.js',
+            'main.js',
+            'day10.html', // for Day 10
+            'date.html', // for js_practice
+            'README.md'
+        ];
+        
+        let filesAdded = 0;
+        
+        // Try to fetch each common file
+        for (const fileName of commonFiles) {
+            try {
+                const response = await fetch(`${basePath}/${fileName}`);
+                if (response.ok) {
+                    const blob = await response.blob();
+                    zip.file(fileName, blob);
+                    filesAdded++;
+                    console.log(`Added: ${fileName}`);
+                }
+            } catch (error) {
+                // File doesn't exist, skip it
+                console.log(`Skipped: ${fileName}`);
+            }
+        }
+        
+        // If no files were found, show an error
+        if (filesAdded === 0) {
+            throw new Error('No files found in the folder');
+        }
+        
+        // Generate the zip file
+        const content = await zip.generateAsync({ type: 'blob' });
+        
+        // Download the zip file
+        const zipFileName = `${dayFolder.replace(/\//g, '_')}_source.zip`;
+        saveAs(content, zipFileName);
+    }
+})();

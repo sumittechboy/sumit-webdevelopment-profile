@@ -72,6 +72,7 @@ body {
 
     /* Apply scaling */
     -ms-zoom: 0.75;
+    zoom: 0.75;
     /* For older IE versions
     -moz-transform: scale(0.75);
     /* For Firefox */
@@ -277,6 +278,7 @@ a:hover {
     }
 
 }
+
 /* Top navbar with clock and menu */
 .topbar {
     position: fixed;
@@ -289,7 +291,7 @@ a:hover {
     z-index: 2000;
     background: rgba(18, 19, 24, 0.85);
     backdrop-filter: blur(6px);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
     transition: transform 0.28s ease, opacity 0.28s ease;
 }
 
@@ -327,16 +329,47 @@ a:hover {
 }
 
 /* make the clock smaller and remove border inside the navbar */
-.topbar .clock-face { margin-bottom: 0; width: 54px; height: 54px; border-width: 2px; background: transparent; border-color: transparent; }
-.topbar .hand.hour { height: 16px; width: 4px; }
-.topbar .hand.minute { height: 22px; width: 3px; }
-.topbar .hand.second { height: 26px; width: 2px; }
+.topbar .clock-face {
+    margin-bottom: 0;
+    width: 54px;
+    height: 54px;
+    border-width: 2px;
+    background: transparent;
+    border-color: transparent;
+}
+
+.topbar .hand.hour {
+    height: 16px;
+    width: 4px;
+}
+
+.topbar .hand.minute {
+    height: 22px;
+    width: 3px;
+}
+
+.topbar .hand.second {
+    height: 26px;
+    width: 2px;
+}
 
 /* Show digital time to the right of analog in the navbar */
-.topbar .digital-time { font-size: 0.95rem; margin-left: 8px; color: #FFD86B; }
-.topbar .digital-clock { align-items: center; gap: 10px; }
+.topbar .digital-time {
+    font-size: 0.95rem;
+    margin-left: 8px;
+    color: #FFD86B;
+}
 
-.nav-actions { display: flex; align-items: center; gap: 12px; }
+.topbar .digital-clock {
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
 .menu-button {
     background: linear-gradient(90deg, #3cecc9 0%, #7FDBCA 100%);
@@ -346,11 +379,11 @@ a:hover {
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
 }
 
 .menu-button:hover {
-   background: linear-gradient(90deg, #d4dcda 0%, #dce0e0 100%);
+    background: linear-gradient(90deg, #d4dcda 0%, #dce0e0 100%);
 }
 
 .projects-menu {
@@ -363,7 +396,7 @@ a:hover {
     color: #E3E6ED;
     border-radius: 10px;
     padding: 8px 10px;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
     transform-origin: top right;
     opacity: 0;
     visibility: hidden;
@@ -380,28 +413,163 @@ a:hover {
     transform: translateY(0) scale(1);
 }
 
-.projects-menu h4 { margin: 0 0 8px 0; color: #7FDBCA; }
+.projects-menu h4 {
+    margin: 0 0 8px 0;
+    color: #7FDBCA;
+}
 
-.projects-menu ul { padding: 0; margin: 6px 0 0 0; list-style: none; }
+.projects-menu ul {
+    padding: 0;
+    margin: 6px 0 0 0;
+    list-style: none;
+}
 
-.projects-menu li { margin: 6px 0; }
+.projects-menu li {
+    margin: 6px 0;
+}
 
-.projects-menu a { color: #FFD86B; text-decoration: none; font-size: 0.95rem; padding: 6px 8px; display: inline-block; border-radius: 6px; }
+.projects-menu a {
+    color: #FFD86B;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 6px 8px;
+    display: inline-block;
+    border-radius: 6px;
+}
 
-.projects-menu a:hover { background: rgba(255,216,107,0.06); }
+.projects-menu a:hover {
+    background: rgba(255, 216, 107, 0.06);
+}
 
-.menu-close { background: transparent; border: none; color: #FFD86B; font-size: 1em; cursor: pointer; float: right; padding: 4px 6px; }
+.menu-close {
+    background: transparent;
+    border: none;
+    color: #FFD86B;
+    font-size: 1em;
+    cursor: pointer;
+    float: right;
+    padding: 4px 6px;
+}
 
 /* Make topbar compact on small screens */
 @media screen and (max-width: 600px) {
-    .topbar { height: 56px; }
+    .topbar {
+        height: 56px;
+    }
+
     /* show only analog clock on mobile: hide digital time */
-    .topbar .digital-time { display: none !important; }
-    .topbar .clock-face { width: 46px; height: 46px; border-width: 0; background: transparent; }
-    .topbar .hand.hour { height: 14px; }
-    .topbar .hand.minute { height: 18px; }
-    .topbar .hand.second { height: 20px; }
-    .menu-button { padding: 6px 8px; font-size: 0.95rem; }
-    .projects-menu { right: 8px; left: 8px; width: auto; max-height: 55vh; }
-    .projects-menu a { font-size: 0.9rem; padding: 6px 6px; }
+    .topbar .digital-time {
+        display: none !important;
+    }
+
+    .topbar .clock-face {
+        width: 46px;
+        height: 46px;
+        border-width: 0;
+        background: transparent;
+    }
+
+    .topbar .hand.hour {
+        height: 14px;
+    }
+
+    .topbar .hand.minute {
+        height: 18px;
+    }
+
+    .topbar .hand.second {
+        height: 20px;
+    }
+
+    .menu-button {
+        padding: 6px 8px;
+        font-size: 0.95rem;
+    }
+
+    .projects-menu {
+        right: 8px;
+        left: 8px;
+        width: auto;
+        max-height: 55vh;
+    }
+
+    .projects-menu a {
+        font-size: 0.9rem;
+        padding: 6px 6px;
+    }
+}
+
+/* Download Button Style */
+.download-btn {
+    background: transparent;
+    color: #7FDBCA;
+    border: 2px solid #7FDBCA;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #7FDBCA;
+    color: #121318;
+    box-shadow: 0 0 12px rgba(127, 219, 202, 0.4);
+    transform: translateY(-2px);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile adjustments for download button */
+@media screen and (max-width: 600px) {
+    .download-btn {
+        padding: 4px 10px;
+        font-size: 0.85em;
+        border-width: 1.5px;
+    }
+}
+
+/* Day-specific Download Button Styles */
+.day-download-btn {
+    background: linear-gradient(135deg, #FFD86B 0%, #FFA500 100%);
+    color: #121318;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9em;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 216, 107, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.day-download-btn:hover {
+    background: linear-gradient(135deg, #7FDBCA 0%, #5BC0BE 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(127, 219, 202, 0.4);
+}
+
+.day-download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(127, 219, 202, 0.3);
+}
+
+/* Mobile adjustments for day download button */
+@media screen and (max-width: 600px) {
+    .day-download-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+        margin-top: 10px;
+    }
 }
