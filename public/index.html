@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 
+
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js"></script>
 
@@ -240,6 +241,31 @@
         </ul>
     </div>
 
+    <!-- PDF Notes Button -->
+    <div style="text-align:center; margin-top:40px; margin-bottom:40px;">
+        <button id="showNotesBtn" class="notes-btn">
+            📚 Show HTML, CSS, JS Practice Notes
+        </button>
+    </div>
+
+    <!-- PDF Dialog Modal -->
+    <div id="pdfDialog" class="pdf-dialog">
+        <div class="pdf-dialog-content">
+            <div class="pdf-dialog-header">
+                <h2>HTML, CSS, JS Practice Notes</h2>
+                <button id="closePdfDialog" class="close-dialog-btn" aria-label="Close dialog">✕</button>
+            </div>
+            <div class="pdf-dialog-body">
+                <iframe id="pdfViewer" src="./HTML CSS JS Basics.pdf" class="pdf-viewer"></iframe>
+            </div>
+            <div class="pdf-dialog-footer">
+                <a href="./HTML CSS JS Basics.pdf" download="HTML_CSS_JS_Basics.pdf" class="download-pdf-btn">
+                    📥 Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div style="text-align:center; margin-top:40px; font-family:sans-serif; color:#333;">
         <h2>Secret Book Access</h2>
         <input type="text" id="secretInput" placeholder="Enter secret word"
@@ -248,7 +274,6 @@
             style="display:none; margin-left:10px; padding:8px 18px; font-size:1em; border-radius:6px; background:#23272F; color:#FFD86B; border:none; cursor:pointer;">Open
             the Book</button>
     </div>
-    <script src="./script.js" defer></script>
     <script src="./app.js" defer></script>
 
 

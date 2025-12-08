@@ -210,3 +210,41 @@
         saveAs(content, zipFileName);
     }
 })();
+
+// PDF Dialog functionality
+(function () {
+    const showNotesBtn = document.getElementById('showNotesBtn');
+    const pdfDialog = document.getElementById('pdfDialog');
+    const closePdfDialog = document.getElementById('closePdfDialog');
+
+    if (!showNotesBtn || !pdfDialog || !closePdfDialog) return;
+
+    // Open dialog
+    showNotesBtn.addEventListener('click', function () {
+        pdfDialog.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+
+    // Close dialog
+    function closeDialog() {
+        pdfDialog.classList.remove('open');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    closePdfDialog.addEventListener('click', closeDialog);
+
+    // Close dialog when clicking outside the content
+    pdfDialog.addEventListener('click', function (e) {
+        if (e.target === pdfDialog) {
+            closeDialog();
+        }
+    });
+
+    // Close dialog with Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && pdfDialog.classList.contains('open')) {
+            closeDialog();
+        }
+    });
+})();
+
