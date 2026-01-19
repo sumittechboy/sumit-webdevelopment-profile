@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Preview - Intellipaat Project</title>
+    <link rel="stylesheet" href="./project-view.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- JSZip and FileSaver for creating downloadable zip files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </a>
+            <div class="project-title" id="displayTitle">Latest Project</div>
+        </div>
+        <div class="nav-right">
+            <!-- Optional: User status or other links -->
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <aside class="sidebar">
+            <section class="sidebar-section">
+                <h3>About Project</h3>
+                <div class="info-card">
+                    This is the Intellipaat Project, a comprehensive web development practice session focusing on
+                    responsive design, layouts, and interactive elements.
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Developer Resources</h3>
+                <button id="downloadResourcesBtn" class="download-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Resources
+                </button>
+                <button id="downloadSourceBtn" class="download-btn secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    Download Full Source
+                </button>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span
+                        style="background: rgba(255,215,0,0.1); color: #ffd700; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; border: 1px solid rgba(255,215,0,0.3);">HTML5</span>
+                    <span
+                        style="background: rgba(0,191,255,0.1); color: #00bfff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; border: 1px solid rgba(0,191,255,0.3);">CSS3</span>
+                    <span
+                        style="background: rgba(255,105,180,0.1); color: #ff69b4; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; border: 1px solid rgba(255,105,180,0.3);">Responsive</span>
+                </div>
+            </section>
+        </aside>
+
+        <section class="content-area">
+            <div class="viewport-info">
+                Preview Mode: Responsive Desktop View
+            </div>
+            <iframe id="projectFrame" src="./practice_sessions/intellipaatProject/index.html"></iframe>
+        </section>
+    </main>
+
+    <script src="./project-view.js"></script>
+</body>
+
+</html>
